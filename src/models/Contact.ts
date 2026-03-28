@@ -4,6 +4,7 @@ export interface IContact extends Document {
   serialNumber: number;
   fullName: string;
   phoneNumber: string;
+  place?: string;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -26,6 +27,10 @@ const ContactSchema: Schema<IContact> = new Schema(
       required: [true, 'Phone number is required'],
       trim: true,
       maxlength: [20, 'Phone number cannot exceed 20 characters'],
+    },
+    place: {
+      type: String,
+      trim: true,
     },
   },
   {
