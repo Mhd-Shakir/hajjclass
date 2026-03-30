@@ -467,7 +467,9 @@ export default function ContactsPage() {
                             onChange={(e) => setEditPhone(e.target.value)}
                           />
                         ) : (
-                          <span className="phone-text">{contact.phoneNumber}</span>
+                          <a href={`tel:${contact.phoneNumber}`} className="phone-text" style={{ textDecoration: 'none' }}>
+                            {contact.phoneNumber}
+                          </a>
                         )}
                       </td>
 
